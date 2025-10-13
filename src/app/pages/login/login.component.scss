@@ -86,7 +86,10 @@ header {
   letter-spacing: 1px;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
-
+.titulo a {
+  color: #fff;
+  text-decoration: none;
+}
 /* Login Form Styles */
 .login-container {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);

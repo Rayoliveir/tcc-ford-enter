@@ -84,7 +84,10 @@ header {
   letter-spacing: 1px;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
-
+.titulo a {
+  color: #fff;
+  text-decoration: none;
+}
 /* Main Content */
 .container {
   max-width: 1200px;
