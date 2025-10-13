@@ -47,11 +47,6 @@ export class HomepageComponent implements OnInit {
           <li>Deploy: Docker, Kubernetes</li>
         </ul>
         
-        <h3>Instruções de Instalação</h3>
-        <p>1. Clone o repositório<br>
-        2. Instale as dependências com npm install<br>
-        3. Configure as variáveis de ambiente<br>
-        4. Inicie o servidor com npm start</p>
       `,
       difficulty: 'dificil'
     },
