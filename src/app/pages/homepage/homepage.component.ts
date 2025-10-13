@@ -324,7 +324,7 @@ export class HomepageComponent implements OnInit {
     },
     {
       id: 12,
-      title: "App de Receitas",
+      title: "Website de Receitas",
       description: "Catálogo de receitas com busca e filtros por ingredientes e categorias.",
       isFavorite: false,
       documentation: `
