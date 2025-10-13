@@ -500,9 +500,7 @@ export class HomepageComponent implements OnInit {
           <li>React, Chart.js, Axios</li>
         </ul>
         
-        <h3>Instruções</h3>
-        <p>1. npm install<br>
-        2. npm run dev</p>
+        
       `,
       difficulty: 'medio'
     },
