@@ -101,8 +101,9 @@ header {
   border-radius: 15px;
   margin: 0 auto;
   max-height: calc(100vh - 100px);
-  overflow: hidden; // Prevent scrolling within the container
   margin-top: 90px;
+  height: 700px;
+  max-height: calc(100vh - 100px);
 }
 
 body.light-theme .signup-container {
@@ -185,6 +186,11 @@ body.dark-theme .form-input:focus {
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   margin-top: 10px;
+}
+
+.btn-signup:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 body.light-theme .btn-signup {
