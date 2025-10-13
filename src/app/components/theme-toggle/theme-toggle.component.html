@@ -1,0 +1,8 @@
+<div class="switch-tema">
+  <input 
+    type="checkbox" 
+    id="theme-toggle" 
+    [checked]="isDarkMode"
+    (change)="toggleTheme()">
+  <label for="theme-toggle">{{ isDarkMode ? '' : '' }}</label>
+</div>

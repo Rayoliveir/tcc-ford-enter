@@ -1,0 +1,64 @@
+<header>
+  <div class="titulo">CodeSpark</div>
+  <div class="header-controls">
+    <app-theme-toggle></app-theme-toggle>
+    <button class="logout-btn" (click)="logout()">
+      <span class="logout-text"></span>
+      <svg class="logout-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+        <polyline points="16 17 21 12 16 7"></polyline>
+        <line x1="21" y1="12" x2="9" y2="12"></line>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<div class="dashboard">
+  <div class="filters">
+    <div class="tabs">
+      <div 
+        class="tab" 
+        [class.active]="activeTab === 'all'"
+        (click)="switchTab('all')">
+        Todos os Projetos
+      </div>
+      <div 
+        class="tab" 
+        [class.active]="activeTab === 'favorites'"
+        (click)="switchTab('favorites')">
+        Favoritos
+      </div>
+    </div>
+    
+    <div class="difficulty-filter">
+      <label for="difficulty-select">Filtrar por dificuldade:</label>
+      <select 
+        id="difficulty-select" 
+        class="difficulty-select" 
+        (change)="filterByDifficulty($event.target.value)"
+        [value]="selectedDifficulty">
+        <option value="all">Todas as dificuldades</option>
+        <option value="facil">Fácil</option>
+        <option value="medio">Médio</option>
+        <option value="dificil">Difícil</option>
+        <option value="extra-dificil">Extra Difícil</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="projects-grid">
+    <app-project-card
+      *ngFor="let project of filteredProjects"
+      [project]="project"
+      (toggleFavorite)="toggleFavorite($event)"
+      (showDocumentation)="showDocumentation($event)">
+    </app-project-card>
+  </div>
+</div>
+
+<app-documentation-modal
+  [isVisible]="isModalVisible"
+  [title]="modalTitle"
+  [content]="modalContent"
+  (closeModal)="closeModal()">
+</app-documentation-modal>
