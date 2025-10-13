@@ -76,11 +76,6 @@ export class HomepageComponent implements OnInit {
           <li>Deploy: Vercel</li>
         </ul>
         
-        <h3>Instruções de Instalação</h3>
-        <p>1. Clone este repositório<br>
-        2. Execute npm install<br>
-        3. Adicione as chaves do Firebase no arquivo .env<br>
-        4. Rode npm run dev e acesse http://localhost:5173</p>
       `,
       difficulty: 'dificil'
     },
@@ -109,11 +104,6 @@ export class HomepageComponent implements OnInit {
           <li>Deploy: Netlify</li>
         </ul>
         
-        <h3>Instruções de Instalação</h3>
-        <p>1. npm install<br>
-        2. Configure as variáveis de ambiente<br>
-        3. Execute npm run dev<br>
-        4. Acesse http://localhost:5173</p>
       `,
       difficulty: 'medio'
     },
@@ -142,10 +132,7 @@ export class HomepageComponent implements OnInit {
           <li>Deploy: Vercel</li>
         </ul>
         
-        <h3>Instruções de Instalação</h3>
-        <p>1. npm install<br>
-        2. npm run dev<br>
-        3. Acesse localhost:3000</p>
+        
       `,
       difficulty: 'medio'
     },
@@ -174,10 +161,6 @@ export class HomepageComponent implements OnInit {
           <li>Deploy: Netlify</li>
         </ul>
         
-        <h3>Instruções de Instalação</h3>
-        <p>1. npm install<br>
-        2. Configure sua chave da OpenWeather no .env<br>
-        3. npm run dev</p>
       `,
       difficulty: 'facil'
     },
@@ -205,10 +188,7 @@ export class HomepageComponent implements OnInit {
           <li>Deploy: Vercel</li>
         </ul>
         
-        <h3>Instruções de Instalação</h3>
-        <p>1. npm install<br>
-        2. npm run dev<br>
-        3. Adicione seus arquivos markdown em /posts</p>
+      
       `,
       difficulty: 'medio'
     },
@@ -234,9 +214,6 @@ export class HomepageComponent implements OnInit {
           <li>Vue.js, Pinia, TailwindCSS</li>
         </ul>
         
-        <h3>Instruções de Instalação</h3>
-        <p>1. npm install<br>
-        2. npm run serve</p>
       `,
       difficulty: 'facil'
     },
@@ -263,10 +240,7 @@ export class HomepageComponent implements OnInit {
           <li>API: Unsplash</li>
         </ul>
         
-        <h3>Instruções de Instalação</h3>
-        <p>1. npm install<br>
-        2. Configure sua chave da API Unsplash<br>
-        3. npm start</p>
+        
       `,
       difficulty: 'medio'
     },
@@ -292,10 +266,7 @@ export class HomepageComponent implements OnInit {
           <li>React, Material UI, YouTube API</li>
         </ul>
         
-        <h3>Instruções de Instalação</h3>
-        <p>1. npm install<br>
-        2. Crie sua chave da API YouTube<br>
-        3. npm run dev</p>
+        
       `,
       difficulty: 'dificil'
     },
@@ -321,9 +292,7 @@ export class HomepageComponent implements OnInit {
           <li>React, Socket.io, TailwindCSS</li>
         </ul>
         
-        <h3>Instruções de Instalação</h3>
-        <p>1. npm install<br>
-        2. npm run dev</p>
+
       `,
       difficulty: 'dificil'
     },
@@ -349,10 +318,7 @@ export class HomepageComponent implements OnInit {
           <li>Next.js, Spotify API, Styled Components</li>
         </ul>
         
-        <h3>Instruções de Instalação</h3>
-        <p>1. npm install<br>
-        2. Configure as chaves da Spotify API<br>
-        3. npm run dev</p>
+        
       `,
       difficulty: 'dificil'
     },
@@ -378,9 +344,7 @@ export class HomepageComponent implements OnInit {
           <li>React, Styled Components, Spoonacular API</li>
         </ul>
         
-        <h3>Instruções de Instalação</h3>
-        <p>1. npm install<br>
-        2. npm run dev</p>
+        
       `,
       difficulty: 'medio'
     },
@@ -406,9 +370,7 @@ export class HomepageComponent implements OnInit {
           <li>React, DnD Kit, Zustand</li>
         </ul>
         
-        <h3>Instruções de Instalação</h3>
-        <p>1. npm install<br>
-        2. npm run dev</p>
+        
       `,
       difficulty: 'dificil'
     },
@@ -434,10 +396,7 @@ export class HomepageComponent implements OnInit {
           <li>Next.js, Firebase, TailwindCSS</li>
         </ul>
         
-        <h3>Instruções de Instalação</h3>
-        <p>1. npm install<br>
-        2. Adicione suas credenciais Firebase<br>
-        3. npm run dev</p>
+        
       `,
       difficulty: 'dificil'
     },
@@ -464,10 +423,7 @@ export class HomepageComponent implements OnInit {
           <li>Integração: Google Calendar API</li>
         </ul>
         
-        <h3>Instruções</h3>
-        <p>1. npm install<br>
-        2. Configure a API do Google<br>
-        3. npm run dev</p>
+        
       `,
       difficulty: 'dificil'
     },
@@ -493,10 +449,7 @@ export class HomepageComponent implements OnInit {
           <li>Next.js, TailwindCSS, GitHub API</li>
         </ul>
         
-        <h3>Instruções de Instalação</h3>
-        <p>1. npm install<br>
-        2. npm run dev<br>
-        3. Insira seu nome de usuário GitHub</p>
+        
       `,
       difficulty: 'medio'
     },
@@ -521,9 +474,7 @@ export class HomepageComponent implements OnInit {
           <li>Vue.js, ExchangeRate API</li>
         </ul>
         
-        <h3>Instalação</h3>
-        <p>1. npm install<br>
-        2. npm run serve</p>
+        
       `,
       difficulty: 'facil'
     },
@@ -576,9 +527,7 @@ export class HomepageComponent implements OnInit {
           <li>React, qrcode.react, TailwindCSS</li>
         </ul>
         
-        <h3>Instalação</h3>
-        <p>1. npm install<br>
-        2. npm start</p>
+        
       `,
       difficulty: 'facil'
     },
@@ -605,10 +554,7 @@ export class HomepageComponent implements OnInit {
           <li>Backend opcional: Firebase</li>
         </ul>
         
-        <h3>Instruções</h3>
-        <p>1. npm install<br>
-        2. npm run dev<br>
-        3. Acesse localhost:5173</p>
+        
       `,
       difficulty: 'medio'
     }
