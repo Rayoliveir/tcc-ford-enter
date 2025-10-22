@@ -2,20 +2,22 @@
   <div class="project-image-container">
     <img [src]="'assets/images/' + getImageName(project.title)" [alt]="project.title" (error)="onImageError($event)" class="project-image">
   </div>
-  <h3 class="project-title">{{ project.title }}</h3>
-  <span [class]="getDifficultyClass(project.difficulty)">{{ getDifficultyLabel(project.difficulty) }}</span>
-  <p class="project-description">{{ project.description }}</p>
-  <div class="project-actions">
-    <button 
-      class="btn btn-favorite" 
-      [class.active]="project.isFavorite"
-      (click)="onToggleFavorite()">
-      {{ project.isFavorite ? 'Remover dos Favoritos' : 'Adicionar aos Favoritos' }}
-    </button>
-    <button 
-      class="btn btn-documentation" 
-      (click)="onShowDocumentation()">
-      Documentação do Projeto
-    </button>
+  <div class="project-content">
+    <span [class]="getDifficultyClass(project.difficulty)">{{ getDifficultyLabel(project.difficulty) }}</span>
+    <h3 class="project-title">{{ project.title }}</h3>
+    <p class="project-description">{{ project.description }}</p>
+    <div class="project-actions">
+      <button 
+        class="btn btn-favorite" 
+        [class.active]="project.isFavorite"
+        (click)="onToggleFavorite()">
+        {{ project.isFavorite ? '❤️ Favorito' : '🤍 Favoritar' }}
+      </button>
+      <button 
+        class="btn btn-documentation" 
+        (click)="onShowDocumentation()">
+        📖 Docs
+      </button>
+    </div>
   </div>
 </div>

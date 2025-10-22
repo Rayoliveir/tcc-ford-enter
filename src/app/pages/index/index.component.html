@@ -1,55 +1,233 @@
-<header>
-
-   <div class=" titulo">CodeSpark</div>
-  <app-theme-toggle></app-theme-toggle>
+<header class="modern-header">
+  <div class="header-container">
+    <div class="logo-wrapper" routerLink="/homepage">
+      <h1 class="brand-logo">
+        <span class="logo-text">Code</span>
+        <span class="logo-accent">Spark</span>
+      </h1>
+    </div>
+    
+    <nav class="header-nav">
+      <a routerLink="/login" class="nav-link" style="cursor: pointer;">Entrar</a>
+      <a routerLink="/register" class="btn-header-cta">Começar Agora</a>
+    </nav>
+  </div>
 </header>
 
-<div class="container">
-  <section class="hero">
-    <h1>Transforme Suas Ideias em Projetos Reais</h1>
-    <p>Uma plataforma completa para gerenciar, desenvolver e acompanhar seus projetos de programação</p>
-    
-    <div class="cta-buttons">
-      <a routerLink="/register" class="btn btn-primary">Cadastre-se Gratuitamente</a>
-      <a routerLink="/login" class="btn btn-secondary">Já tenho uma conta</a>
+<section class="hero-section">
+  <div class="hero-background">
+    <div class="gradient-overlay"></div>
+    <div class="animated-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
     </div>
-  </section>
-
-  <section class="features">
-    <div class="feature-card">
-      <div class="feature-icon">📋</div>
-      <h3>Gerenciamento de Projetos</h3>
-      <p>Organize todos os seus projetos em um só lugar.</p>
+  </div>
+  
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="badge-icon">✨</span>
+      <span class="badge-text">Plataforma completa para desenvolvedores</span>
     </div>
     
-    <div class="feature-card">
-      <div class="feature-icon">⭐</div>
-      <h3>Favoritos</h3>
-      <p>Marque seus projetos favoritos para acessá-los rapidamente quando precisar.</p>
+    <h1 class="hero-title">
+      Transforme suas <span class="gradient-text">ideias</span> em 
+      <span class="gradient-text">projetos reais</span>
+    </h1>
+    
+    <p class="hero-description">
+      Uma plataforma intuitiva e moderna para gerenciar, desenvolver e acompanhar 
+      todos os seus projetos de programação em um só lugar.
+    </p>
+    
+    <div class="hero-actions">
+      <a routerLink="/register" class="btn-hero-primary">
+        <span>Cadastre-se Gratuitamente</span>
+        <svg class="btn-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+      <a routerLink="/login" class="btn-hero-secondary" style="cursor: pointer;">
+        <span>Já tenho uma conta</span>
+      </a>
     </div>
     
-    <div class="feature-card">
-      <div class="feature-icon">📚</div>
-      <h3>Documentação</h3>
-      <p>Acesse a documentação completa de cada projeto com instruções detalhadas.</p>
-    </div>
-  </section>
-
-  <section class="about-section">
-    <h2>Sobre o CodeSpark</h2>
-    <div class="about-content">
-      <div class="about-text">
-        <p>O CodeSpark é uma plataforma intuitiva projetada para ajudar desenvolvedores e estudantes de programação a organizar e gerenciar seus projetos de forma eficiente.</p>
-        <p>Com nosso sistema, você pode facilmente encontrar ideias para os seus projetos, marcar os favoritos e acessar documentações detalhadas sempre que precisar.</p>
-        <p>Seja você um iniciante ou um desenvolvedor experiente, nossa plataforma oferece projetos incríveis para elevar sua produtividade e transformar suas ideias em realidade.</p>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-number">100+</div>
+        <div class="stat-label">Projetos Disponíveis</div>
       </div>
-      <div class="about-image">
-        <img src="assets/images/codeSpark.png" alt="CodeSpark Platform">
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-number">50+</div>
+        <div class="stat-label">Tecnologias</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-number">1000+</div>
+        <div class="stat-label">Desenvolvedores</div>
       </div>
     </div>
-  </section>
-</div>
+  </div>
+</section>
 
-<footer>
-  <p>© 2025 CodeSpark. Todos os direitos reservados.</p>
-</footer>
+<section class="features-section">
+  <div class="section-container">
+    <div class="section-header reveal">
+      <span class="section-badge">Recursos</span>
+      <h2 class="section-title">Tudo que você precisa para seus projetos</h2>
+      <p class="section-description">
+        Ferramentas poderosas e intuitivas para elevar sua produtividade
+      </p>
+    </div>
+    
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon-wrapper">
+          <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+          </svg>
+        </div>
+        <h3 class="feature-title">Gerenciamento Inteligente</h3>
+        <p class="feature-description">
+          Organize e gerencie todos os seus projetos de forma eficiente com nossa interface moderna e intuitiva.
+        </p>
+      </div>
+      
+      <div class="feature-card reveal">
+        <div class="feature-icon-wrapper">
+          <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+        </div>
+        <h3 class="feature-title">Sistema de Favoritos</h3>
+        <p class="feature-description">
+          Marque seus projetos favoritos e acesse-os rapidamente sempre que precisar trabalhar neles.
+        </p>
+      </div>
+      
+      <div class="feature-card reveal">
+        <div class="feature-icon-wrapper">
+          <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+          </svg>
+        </div>
+        <h3 class="feature-title">Documentação Completa</h3>
+        <p class="feature-description">
+          Acesse documentação detalhada e instruções passo a passo para cada projeto disponível.
+        </p>
+      </div>
+      
+      <div class="feature-card reveal">
+        <div class="feature-icon-wrapper">
+          <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="3" y1="9" x2="21" y2="9"></line>
+            <line x1="9" y1="21" x2="9" y2="9"></line>
+          </svg>
+        </div>
+        <h3 class="feature-title">Interface Responsiva</h3>
+        <p class="feature-description">
+          Trabalhe de qualquer dispositivo com nossa plataforma totalmente responsiva e adaptável.
+        </p>
+      </div>
+      
+      <div class="feature-card reveal">
+        <div class="feature-icon-wrapper">
+          <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+        </div>
+        <h3 class="feature-title">Acompanhamento em Tempo Real</h3>
+        <p class="feature-description">
+          Monitore o progresso dos seus projetos e mantenha tudo organizado e atualizado.
+        </p>
+      </div>
+      
+      <div class="feature-card reveal">
+        <div class="feature-icon-wrapper">
+          <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+          </svg>
+        </div>
+        <h3 class="feature-title">Múltiplas Tecnologias</h3>
+        <p class="feature-description">
+          Explore projetos em diversas linguagens e frameworks modernos do mercado.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about-section">
+  <div class="section-container">
+    <div class="about-grid">
+      <div class="about-content reveal">
+        <span class="section-badge">Sobre Nós</span>
+        <h2 class="about-title">A plataforma ideal para desenvolvedores</h2>
+        <p class="about-text">
+          O CodeSpark é uma plataforma intuitiva e moderna projetada especificamente para 
+          ajudar desenvolvedores e estudantes de programação a organizar e gerenciar seus 
+          projetos de forma eficiente e profissional.
+        </p>
+        <p class="about-text">
+          Com nosso sistema, você pode facilmente encontrar inspiração para seus próximos 
+          projetos, marcar os favoritos e acessar documentações detalhadas sempre que precisar.
+        </p>
+        
+        <div class="about-features">
+          <div class="about-feature-item">
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span>Interface moderna e intuitiva</span>
+          </div>
+          <div class="about-feature-item">
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span>Totalmente gratuito e open-source</span>
+          </div>
+          <div class="about-feature-item">
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span>Suporte a tema claro e escuro</span>
+          </div>
+          <div class="about-feature-item">
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span>Responsivo para todos os dispositivos</span>
+          </div>
+        </div>
+        
+        <a routerLink="/register" class="btn-about-cta">
+          Comece Agora Gratuitamente
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+      
+      <div class="about-image reveal">
+        <div class="image-wrapper">
+          <img src="assets/images/codeSpark.png" alt="CodeSpark Platform" />
+          <div class="image-overlay"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+

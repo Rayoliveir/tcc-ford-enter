@@ -1,0 +1,53 @@
+<div class="favorites-container">
+  <app-header></app-header>
+
+  <div class="favorites-content">
+    <div class="section-header">
+      <h1 class="page-title">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+        </svg>
+        Meus Projetos Favoritos
+      </h1>
+      <p class="page-subtitle">Acesse rapidamente seus projetos preferidos</p>
+    </div>
+
+    <div *ngIf="favoriteProjects.length === 0" class="no-projects">
+      <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+      </svg>
+      <h2>Nenhum projeto favorito ainda</h2>
+      <p>Explore a homepage e adicione projetos aos seus favoritos clicando no ícone de coração!</p>
+      <button class="btn-primary" (click)="navigateToHomepage()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+        Explorar Projetos
+      </button>
+    </div>
+
+    <div class="projects-grid" *ngIf="favoriteProjects.length > 0">
+      <app-project-card
+        *ngFor="let project of favoriteProjects"
+        [project]="project"
+        (toggleFavorite)="toggleFavorite($event)"
+        (showDocumentation)="showDocumentation($event)"
+      ></app-project-card>
+    </div>
+
+    <div *ngIf="favoriteProjects.length > 0" class="projects-count">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+      </svg>
+      <span>{{ favoriteProjects.length }} {{ favoriteProjects.length === 1 ? 'projeto favorito' : 'projetos favoritos' }}</span>
+    </div>
+  </div>
+</div>
+
+<app-documentation-modal
+  [isVisible]="isModalVisible"
+  [title]="modalTitle"
+  [content]="modalContent"
+  (closeModal)="closeModal()">
+</app-documentation-modal>

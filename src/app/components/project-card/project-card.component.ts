@@ -44,7 +44,6 @@ export class ProjectCardComponent {
   }
 
   getImageName(title: string): string {
-    // Map project titles to image file names
     const imageMap: { [key: string]: string } = {
       'E-commerce Website': 'E-commerce WebSite.png',
       'Dashboard Administrativo': 'Dashboard Administrativo.png',
@@ -72,7 +71,6 @@ export class ProjectCardComponent {
   }
 
   onImageError(event: any): void {
-    // Hide the image and show a placeholder
     const imgElement = event.target;
     imgElement.style.display = 'none';
     

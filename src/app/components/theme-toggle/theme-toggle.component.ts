@@ -17,7 +17,6 @@ export class ThemeToggleComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // Only run in browser environment
     if (this.isBrowser) {
       const currentTheme = localStorage.getItem('theme') || 'light';
       this.isDarkMode = currentTheme === 'dark';
@@ -26,7 +25,6 @@ export class ThemeToggleComponent implements OnInit {
   }
 
   toggleTheme(): void {
-    // Only run in browser environment
     if (!this.isBrowser) return;
     
     this.isDarkMode = !this.isDarkMode;

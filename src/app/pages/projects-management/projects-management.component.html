@@ -1,0 +1,93 @@
+<div class="management-container">
+  <app-header></app-header>
+
+  <div class="management-content">
+    <div class="page-header">
+      <h2 class="page-title">Gerenciamento de Projetos</h2>
+      <p class="page-subtitle">Organize seus projetos favoritos por status</p>
+    </div>
+
+    <div class="status-tabs">
+      <button 
+        class="status-tab"
+        [class.active]="activeTab === 'em-desenvolvimento'"
+        (click)="switchTab('em-desenvolvimento')">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        Em Desenvolvimento
+        <span class="count">{{ projectsInDevelopment.length }}</span>
+      </button>
+      
+      <button 
+        class="status-tab"
+        [class.active]="activeTab === 'concluido'"
+        (click)="switchTab('concluido')">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+          <polyline points="22 4 12 14.01 9 11.01"></polyline>
+        </svg>
+        Concluídos
+        <span class="count">{{ projectsCompleted.length }}</span>
+      </button>
+      
+      <button 
+        class="status-tab"
+        [class.active]="activeTab === 'abandonado'"
+        (click)="switchTab('abandonado')">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="15" y1="9" x2="9" y2="15"></line>
+          <line x1="9" y1="9" x2="15" y2="15"></line>
+        </svg>
+        Abandonados
+        <span class="count">{{ projectsAbandoned.length }}</span>
+      </button>
+    </div>
+
+    <div class="projects-section">
+      <div *ngIf="currentProjects.length === 0" class="no-projects">
+        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+        </svg>
+        <h3>Nenhum projeto nesta categoria</h3>
+        <p>Adicione projetos aos favoritos e gerencie seu status!</p>
+        <button class="btn-primary" (click)="navigateToHomepage()">
+          Explorar Projetos
+        </button>
+      </div>
+
+      <div class="projects-grid" *ngIf="currentProjects.length > 0">
+        <div *ngFor="let project of currentProjects" class="project-item">
+          <div class="project-card-wrapper">
+            <app-project-card
+              [project]="project"
+              (toggleFavorite)="toggleFavorite($event)"
+              (showDocumentation)="showDocumentation($event)"
+            ></app-project-card>
+          </div>
+          
+          <div class="status-management">
+            <label class="status-label">Status do Projeto:</label>
+            <select 
+              class="status-select"
+              [value]="project.status"
+              (change)="changeProjectStatus(project.id, $event.target.value)">
+              <option value="em-desenvolvimento">Em Desenvolvimento</option>
+              <option value="concluido">Concluído</option>
+              <option value="abandonado">Abandonado</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-documentation-modal
+  [isVisible]="isModalVisible"
+  [title]="modalTitle"
+  [content]="modalContent"
+  (closeModal)="closeModal()">
+</app-documentation-modal>

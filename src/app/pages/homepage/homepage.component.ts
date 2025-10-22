@@ -4,7 +4,7 @@ import { isPlatformBrowser } from '@angular/common';
 import { NgFor } from '@angular/common';
 import { ProjectCardComponent, Project } from '../../components/project-card/project-card.component';
 import { DocumentationModalComponent } from '../../components/documentation-modal/documentation-modal.component';
-import { ThemeToggleComponent } from '../../components/theme-toggle/theme-toggle.component';
+import { HeaderComponent } from '../../components/header/header.component';
 
 interface ProjectWithDifficulty extends Project {
   difficulty: 'facil' | 'medio' | 'dificil' | 'extra-dificil';
@@ -13,7 +13,7 @@ interface ProjectWithDifficulty extends Project {
 @Component({
   selector: 'app-homepage',
   standalone: true,
-  imports: [NgFor, ProjectCardComponent, DocumentationModalComponent, ThemeToggleComponent],
+  imports: [NgFor, ProjectCardComponent, DocumentationModalComponent, HeaderComponent],
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.scss']
 })
@@ -559,7 +559,6 @@ export class HomepageComponent implements OnInit {
   ];
 
   favorites: number[] = [];
-  activeTab: string = 'all';
   selectedDifficulty: string = 'all';
   isModalVisible: boolean = false;
   modalTitle: string = '';
@@ -574,16 +573,12 @@ export class HomepageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // Check if user is logged in (only in browser)
     if (this.isBrowser && !localStorage.getItem('isLoggedIn')) {
       this.router.navigate(['/']);
     }
 
-    // Initialize favorites from localStorage (only in browser)
     if (this.isBrowser) {
       this.favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
-
-      // Update projects data with favorites
       this.projects.forEach(project => {
         project.isFavorite = this.favorites.includes(project.id);
       });
@@ -591,28 +586,19 @@ export class HomepageComponent implements OnInit {
   }
 
   toggleFavorite(projectId: number): void {
-    // Only run in browser environment
     if (!this.isBrowser) return;
 
     const project = this.projects.find(p => p.id === projectId);
     
     if (project) {
       project.isFavorite = !project.isFavorite;
-      
-      // Update favorites array
       if (project.isFavorite) {
         this.favorites.push(projectId);
       } else {
         this.favorites = this.favorites.filter(id => id !== projectId);
       }
       
-      // Save to localStorage
       localStorage.setItem('favorites', JSON.stringify(this.favorites));
-      
-      // Re-render if we're on the favorites tab
-      if (this.activeTab === 'favorites') {
-        // The view will automatically update due to Angular's change detection
-      }
     }
   }
 
@@ -630,28 +616,8 @@ export class HomepageComponent implements OnInit {
     this.isModalVisible = false;
   }
 
-  switchTab(tab: string): void {
-    this.activeTab = tab;
-  }
-
   filterByDifficulty(difficulty: string): void {
     this.selectedDifficulty = difficulty;
-  }
-
-  get filteredProjects(): ProjectWithDifficulty[] {
-    let filtered = this.projects;
-    
-    // Filter by tab (all or favorites)
-    if (this.activeTab === 'favorites') {
-      filtered = filtered.filter(project => project.isFavorite);
-    }
-    
-    // Filter by difficulty
-    if (this.selectedDifficulty !== 'all') {
-      filtered = filtered.filter(project => project.difficulty === this.selectedDifficulty);
-    }
-    
-    return filtered;
   }
 
   getDifficultyLabel(difficulty: string): string {
@@ -664,16 +630,21 @@ export class HomepageComponent implements OnInit {
     }
   }
 
+  get filteredProjects() {
+    if (this.selectedDifficulty === 'all') {
+      return this.projects;
+    }
+    return this.projects.filter(project => project.difficulty === this.selectedDifficulty);
+  }
+
   getDifficultyClass(difficulty: string): string {
     return `difficulty-badge ${difficulty}`;
   }
 
   logout(): void {
-    // Remove login status from localStorage
     if (this.isBrowser) {
       localStorage.removeItem('isLoggedIn');
     }
-    // Navigate to login page
     this.router.navigate(['/inicio']);
   }
 }
