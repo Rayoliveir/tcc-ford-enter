@@ -1,0 +1,36 @@
+<app-header></app-header>
+
+<div class="dashboard">
+  <div class="filters">
+    <div class="difficulty-filter">
+      <label for="difficulty-select">Filtrar por dificuldade:</label>
+      <select 
+        id="difficulty-select" 
+        class="difficulty-select" 
+        (change)="filterByDifficulty($event.target.value)"
+        [value]="selectedDifficulty">
+        <option value="all">Todas as dificuldades</option>
+        <option value="facil">Fácil</option>
+        <option value="medio">Médio</option>
+        <option value="dificil">Difícil</option>
+        <option value="extra-dificil">Extra Difícil</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="projects-grid">
+    <app-project-card
+      *ngFor="let project of filteredProjects"
+      [project]="project"
+      (toggleFavorite)="toggleFavorite($event)"
+      (showDocumentation)="showDocumentation($event)">
+    </app-project-card>
+  </div>
+</div>
+
+<app-documentation-modal
+  [isVisible]="isModalVisible"
+  [title]="modalTitle"
+  [content]="modalContent"
+  (closeModal)="closeModal()">
+</app-documentation-modal>
